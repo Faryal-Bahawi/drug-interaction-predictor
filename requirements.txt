@@ -1,0 +1,5 @@
+streamlit
+torch
+torch-geometric
+pandas
+networkx
