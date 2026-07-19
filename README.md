@@ -40,13 +40,13 @@ The GNN outperformed classical ML by 30% by learning from drug network structure
 Python • SQLite • Pandas • NetworkX • PyTorch Geometric • Streamlit • RxNorm API • FDA FAERS • DrugBank
 
 ## Files
-- `01_data_exploration.ipynb` — full data pipeline and model training
+- `data_exploration.ipynb` — full data pipeline and model training
 - `app.py` — Streamlit web application
 - `best_drug_gnn.pt` — trained GNN model (78.1% Test AUC)
 - `drug_to_idx.json` — drug name to index mapping
 - `drug_names.json` — list of 544 drugs in the graph
-- `Drug_Interaction_Predictor_Report_v2.docx` — full technical report
-- `Drug_Interaction_Predictor_Slides_v2.pptx` — presentation slides
+- `Drug_Interaction_Predictor_Report.docx` — full technical report
+- `Drug_Interaction_Predictor_Slides.pptx` — presentation slides
 
 ## Disclaimer
 This tool is for educational purposes only. Not a substitute for professional medical advice.
