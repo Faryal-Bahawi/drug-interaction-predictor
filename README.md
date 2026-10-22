@@ -1,55 +1,29 @@
-# Drug-Drug Interaction Predictor
+# Drug-Drug Interaction Predictor with Graph Neural Networks
 
-A machine learning system that predicts dangerous drug-drug interactions using Graph Neural Networks trained on 5 million real FDA adverse event reports.
+Predicts likely interactions between drugs from FDA adverse-event reports. Classical models come first as baselines, then a graph neural network learns from the structure of which drugs appear together.
 
-## Live Demo
-Try the app: [Coming soon — Hugging Face deployment]
+*Independent portfolio project, FDA FAERS data*
 
-## Results
-| Model | Metric | Score |
-|---|---|---|
-| Logistic Regression | Accuracy | 58% |
-| Random Forest | Accuracy | 60% |
-| Graph Neural Network | Test AUC | 78.1% |
+## Result
 
-The GNN outperformed classical ML by 30% by learning from drug network structure rather than individual pair statistics.
+**78.1% AUC** with the graph neural network, measured against classical baselines built first.
 
-## Real Predictions
-| Drug Pair | Score | Clinical Note |
-|---|---|---|
-| Cyclosporine + Fluconazole | 99.7% | Raises cyclosporine toxicity — kidney damage risk |
-| Warfarin + Fluconazole | 99.0% | Significantly increases bleeding risk |
-| Haloperidol + Clozapine | 99.8% | Detected via graph structure |
-| Warfarin + Ibuprofen | 72.1% | Lower but real risk |
+## What I did
 
-## Dataset
-- Source: FDA FAERS 2026 Q1 (downloaded directly from FDA)
-- 5+ million adverse event reports across 7 tables
-- Drug interaction labels from DrugBank (ChCh-Miner dataset)
-- 29,557 unique drug names standardized via RxNorm API
+- **Data:** cleaned and standardized FDA FAERS adverse-event data, including mapping brand names to generic drug names so the same drug isn't counted twice.
+- **Baselines first:** trained classical models before the graph model, so any gain could be measured honestly.
+- **Graph model:** built a GNN that represents drugs and their co-occurrence as a graph, to capture interaction structure.
+- **Analysis:** error analysis and ablation tests to find which features and graph relationships actually improved predictions.
+- **Documentation:** wrote up modeling assumptions, trade-offs and negative results, so the work can be reproduced.
 
-## Methodology
-1. Data cleaning — regex, RxNorm standardization, noise removal
-2. PRR analysis — same statistical method used by the FDA
-3. Classical ML baseline — Logistic Regression, Random Forest
-4. Graph Neural Network — drugs as nodes, interactions as edges
-5. Proper train/validation/test split (70/10/20)
-6. Streamlit web app deployment
+## Tech stack
 
-## Tech Stack
-Python • SQLite • Pandas • NetworkX • PyTorch Geometric • Streamlit • RxNorm API • FDA FAERS • DrugBank
+Python, PyTorch, PyTorch Geometric, pandas, scikit-learn, Jupyter
 
-## Files
-- `data_exploration.ipynb` — full data pipeline and model training
-- `app.py` — Streamlit web application
-- `best_drug_gnn.pt` — trained GNN model (78.1% Test AUC)
-- `drug_to_idx.json` — drug name to index mapping
-- `drug_names.json` — list of 544 drugs in the graph
-- `Drug_Interaction_Predictor_Report.docx` — full technical report
-- `Drug_Interaction_Predictor_Slides.pptx` — presentation slides
+## How to run
 
-## Disclaimer
-This tool is for educational purposes only. Not a substitute for professional medical advice.
+<!-- Faryal: add the notebook name, where to download the FAERS data, and setup steps here. -->
 
 ## Author
-Faryal Bahawi | Data Science M.S. Candidate | University of New Haven
+
+**Faryal Bahawi** | [Portfolio](https://faryal-bahawi.netlify.app) | [LinkedIn](https://www.linkedin.com/in/faryal-bahawi-28027b205/)
