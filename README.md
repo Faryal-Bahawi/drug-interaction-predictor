@@ -20,10 +20,6 @@ Predicts likely interactions between drugs from FDA adverse-event reports. Class
 
 Python, PyTorch, PyTorch Geometric, pandas, scikit-learn, Jupyter
 
-## How to run
-
-<!-- Faryal: add the notebook name, where to download the FAERS data, and setup steps here. -->
-
 ## Author
 
 **Faryal Bahawi** | [Portfolio](https://faryal-bahawi.netlify.app) | [LinkedIn](https://www.linkedin.com/in/faryal-bahawi-28027b205/)
